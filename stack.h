@@ -19,6 +19,17 @@ public:
     Stack();  // constructor
     ~Stack();  // destructor
 
+    /**********************
+    Getters/Accessors
+    ***********************/
+
+    /**********************
+    Setters/Mutators
+    ***********************/
+
+    /**********************
+    Printing Methods
+    ***********************/
     bool isEmpty() { return top < 0; };
     bool peek(int*);
     int pop();
