@@ -30,5 +30,5 @@ private:
     int stack[10];
 };
 
-#endif //STACK_INTSTACK_H
+#endif //STACK_H
 
