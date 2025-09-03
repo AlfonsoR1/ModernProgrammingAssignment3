@@ -8,10 +8,10 @@
 #include "main.h"
 
 void printopening() {
-    cout << "Beginning tests..." << endl;
+    std::cout << "Beginning tests..." << std::endl;
 }
 
-void printclosing() {cout << "Testing complete." << endl;}
+void printclosing() {std::cout << "Testing complete." << std::endl;}
 
 int main() {
 
@@ -40,7 +40,7 @@ int main() {
     ******* UNDERFLOW TESTS *************************
     ************************************************/
 
-    cout << "  underflow tests ==> ";
+    std::cout << "  underflow tests ==> ";
 
     for (int i = 0; i < 1000; i++) {
 
@@ -85,16 +85,16 @@ int main() {
        peeked == 0 &&
        pushed == round(STACKSIZE*MULTIPLIER) && 
        is_empty == round(STACKSIZE*MULTIPLIER)) {
-       cout << "pass" << endl;
+       std::cout << "pass" << std::endl;
     } else {
-        cout << "failed" << endl;
+        std::cout << "failed" << std::endl;
     }
     
     /************************************************
     ******* OVERFLOW TESTS **************************
     ************************************************/
 
-    cout << "  overflow tests ==> ";
+    std::cout << "  overflow tests ==> ";
 
     // reset counters for tests
     is_empty = 0;
@@ -158,9 +158,9 @@ int main() {
        peeked == round(STACKSIZE*MULTIPLIER) &&
        pushed == 0 && 
        -is_empty == round(STACKSIZE*MULTIPLIER)) {
-       cout << "pass" << endl;
+       std::cout << "pass" << std::endl;
     } else {
-        cout << "failed" << endl;
+        std::cout << "failed" << std::endl;
     }
 
     /************************************************
@@ -172,7 +172,7 @@ int main() {
     popped = 0;
     pushed = 0;
 
-    cout << "  simple underflow tests ==> ";
+    std::cout << "  simple underflow tests ==> ";
 
     // emptying stack
     for (int i = 0; i < STACKSIZE+1; i++) {
@@ -198,9 +198,9 @@ int main() {
        peeked == STACKSIZE-1 &&
        pushed == 0 && 
        -is_empty == STACKSIZE-1) {
-       cout << "pass" << endl;
+       std::cout << "pass" << std::endl;
     } else {
-        cout << "failed" << endl;
+        std::cout << "failed" << std::endl;
     }
 
     /************************************************
@@ -214,7 +214,7 @@ int main() {
 
     // need a stack of reasonable size
     // to perform tests
-    cout << "  mid-stack tests ==> ";
+    std::cout << "  mid-stack tests ==> ";
     if(STACKSIZE >= 4){
         
         // fill stack half-way
@@ -256,13 +256,13 @@ int main() {
            peeked == round(STACKSIZE*MULTIPLIER) &&
            pushed == round(STACKSIZE*MULTIPLIER) && 
            -is_empty == round(STACKSIZE*MULTIPLIER)) {
-           cout << "pass" << endl;
+           std::cout << "pass" << std::endl;
         } else {
-            cout << "failed" << endl;
+            std::cout << "failed" << std::endl;
         }
 
     } else{
-        cout << "skipped, stack too small" << endl;
+        std::cout << "skipped, stack too small" << std::endl;
     }
 
     /************************************************
@@ -270,7 +270,7 @@ int main() {
     ** essentially this is only a crash test ********
     *************************************************/
     
-    cout << "  random testing ==> ";
+    std::cout << "  random testing ==> ";
     // clearing stack to start
     while(1){
         stack.pop();
@@ -323,7 +323,7 @@ int main() {
 
     }
     // if we made it here, no crash
-    cout << "pass" << endl;
+    std::cout << "pass" << std::endl;
 
    printclosing();
    return 0;
