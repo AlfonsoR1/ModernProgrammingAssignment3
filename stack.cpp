@@ -6,7 +6,6 @@
 ************************************************* */
 
 #include "stack.h"
-#include <iostream> // cout, endl
 
 Stack::Stack() {
     this->top = -1;
