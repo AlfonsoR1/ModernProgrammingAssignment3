@@ -46,7 +46,7 @@ bool Stack::push(int value) {
     /* **************************
      * Pushes a value onto the stack
      *
-     * @param int value. value to push
+     * @param int value: value to push
      * @exception none
      * @return bool : true if push is successful
      *  false if stack is full
@@ -77,6 +77,17 @@ int Stack::pop() {
 }
 
 bool Stack::peek(int *ret) {
+    /* **************************
+     * Gets the top value
+     * from the stack without removing it.
+     *
+     * @param int* ret: pointer used to
+     * receive the top value from stack
+     * @exception none
+     * @return bool : true if value
+     * is retrieved, false if stack
+     * is empty
+     ****************************/
     bool peeked = false;
     if (top > -1) {
         *ret = stack[top];
