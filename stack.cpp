@@ -60,16 +60,15 @@ bool Stack::push(int value) {
 }
 
 int Stack::pop() {
-    /* ****************************************
-    Pop an item from the top of the stack,
-    if there is one
-
-    @param na : na
-
-    @return (int) : top item on the stack
-    
-    @exception (int) : if underflow
-    *********************************************/
+    /* **************************
+     * Removes and returns the top
+     * value from the stack.
+     *
+     * @param none
+     * @exception throws -1 if stack is empty
+     * @return int value popped from
+     *  the stack
+     ****************************/
     if (top >= 0) {
         return stack[top--];
     } else {
