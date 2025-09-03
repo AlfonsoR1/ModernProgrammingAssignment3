@@ -28,13 +28,13 @@ public:
     /**********************
     Setters/Mutators
     ***********************/
+    int pop();
+    bool push(int i);
 
     /**********************
     Printing Methods
     ***********************/
 
-    int pop();
-    bool push(int i);
 
 
 private:
