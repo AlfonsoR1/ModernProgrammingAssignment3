@@ -18,4 +18,3 @@
 #include <time.h>   // time
 #include <cmath>    // round
 
-using namespace std;
