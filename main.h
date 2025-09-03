@@ -15,11 +15,15 @@
 #define CHOICES 6 // used to pick random operations
 #define MAX_INT 100000 // random ints to push, 1 - 100000
 
+//Standard
 #include <iostream> // cout, endl
 #include <stdio.h>  // rand
 #include <time.h>   // time
 #include <cmath>    // round
+
+//Local
 #include "stack.h"  // stack class
+
 
 
 #endif //MAIN_H
