@@ -29,7 +29,7 @@ public:
     Setters/Mutators
     ***********************/
     int pop();
-    bool push(int i);
+    bool push(int value);
 
     /**********************
     Printing Methods

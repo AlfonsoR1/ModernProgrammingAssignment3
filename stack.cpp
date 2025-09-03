@@ -42,7 +42,7 @@ bool Stack::isEmpty() {
     return top < 0;
 }
 
-bool Stack::push(int i) {
+bool Stack::push(int value) {
     /* **************************
      * Pushes a value onto the stack
      *
@@ -52,7 +52,7 @@ bool Stack::push(int i) {
      *  false if stack is full
      ****************************/
     if (top < STACKSIZE - 1) {
-        stack[++top] = i;
+        stack[++top] = value;
         return true;
     } else {
         return false;
