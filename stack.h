@@ -30,7 +30,7 @@ public:
     /**********************
     Printing Methods
     ***********************/
-    bool isEmpty() { return top < 0; };
+    bool isEmpty();
     bool peek(int*);
     int pop();
     bool push(int i);
@@ -42,7 +42,7 @@ private:
     ***********************/
 
 
-    
+
     /**********************
     Attributes
     ***********************/
