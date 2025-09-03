@@ -35,7 +35,6 @@ public:
     int pop();
     bool push(int i);
 
-    int top=0;
 
 private:
     /**********************
@@ -48,6 +47,7 @@ private:
     Attributes
     ***********************/
     int stack[10];
+    int top;
 };
 
 #endif //STACK_H
