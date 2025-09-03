@@ -22,6 +22,8 @@ public:
     /**********************
     Getters/Accessors
     ***********************/
+    bool isEmpty();
+    bool peek(int*);
 
     /**********************
     Setters/Mutators
@@ -30,8 +32,7 @@ public:
     /**********************
     Printing Methods
     ***********************/
-    bool isEmpty();
-    bool peek(int*);
+
     int pop();
     bool push(int i);
 
