@@ -9,9 +9,9 @@
 
 Stack::Stack() {
     /* **************************
-     * Constructor accepts a length
-     * and sets the length of the
-     * square to that length.
+     * Constructor initializes the stack
+     * and sets top to -1 to show the
+     * stack is empty.
      *
      * @param float length
      * @exception none
