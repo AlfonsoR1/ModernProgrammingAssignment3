@@ -1,7 +1,5 @@
 
 #include "main.h"
-#include <iostream> // cout, endl
-#include "stack.h"  // stack class
 
 void printopening() {
     cout << "Beginning tests..." << endl;
