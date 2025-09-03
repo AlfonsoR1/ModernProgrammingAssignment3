@@ -42,11 +42,11 @@ private:
     ***********************/
 
 
-
+    
     /**********************
     Attributes
     ***********************/
-    int stack[10];
+    int stack[STACKSIZE];
     int top;
 };
 
