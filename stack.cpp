@@ -13,7 +13,7 @@ Stack::Stack() {
      * and sets top to -1 to show the
      * stack is empty.
      *
-     * @param float length
+     * @param none
      * @exception none
      * @return void
      * ****************************/
@@ -30,6 +30,15 @@ Stack::~Stack() {
 }
 
 bool Stack::isEmpty() {
+    /* **************************
+     * Checks to see if the stack
+     * is empty.
+     *
+     * @param none
+     * @exception none
+     * @return bool : true if the stack
+     * is empty, false if not empty
+     ****************************/
     return top < 0;
 }
 
