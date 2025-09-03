@@ -1,9 +1,9 @@
-/* ******************************************
- * File:   stack.cpp
- * Author: Alex Katrompas
- * The implementation for a simple integer Stack class.
- * 
- * ******************************************/
+/* *************************************************
+*  Name: Alfonso Rocha
+*  Assignment: Assignment 3: Best Practices
+*  Purpose: A demonstration of a simple stack ADT and finding
+*           all violations of best practices on stack.cpp
+************************************************* */
 
 #include "stack.h"
 #include <iostream> // cout, endl
