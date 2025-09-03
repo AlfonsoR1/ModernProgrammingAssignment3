@@ -17,6 +17,10 @@ Stack::~Stack() {
     std::cout << "Stack destructor called." << std::endl;
 }
 
+bool Stack::isEmpty() {
+    return top < 0;
+}
+
 bool Stack::push(int i) {
     if (top < STACKSIZE - 1) {
         stack[++top] = i;
