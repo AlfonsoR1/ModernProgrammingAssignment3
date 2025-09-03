@@ -9,11 +9,11 @@
 
 Stack::Stack() {
     this->top = -1;
-    std::cout << "Top set." << std::endl;
+    << "Top set." << ;
 }
 
 Stack::~Stack() {
-    std::cout << "Stack destructor called." << std::endl;
+     << "Stack destructor called." << ;
 }
 
 bool Stack::isEmpty() {
@@ -27,7 +27,7 @@ bool Stack::push(int i) {
     } else {
         return false;
     }
-    std::cout << "Stack overflow, cannot push " << i << std::endl;
+     << "Stack overflow, cannot push " << i << ;
 }
 
 int Stack::pop() {
