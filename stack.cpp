@@ -43,6 +43,14 @@ bool Stack::isEmpty() {
 }
 
 bool Stack::push(int i) {
+    /* **************************
+     * Pushes a value onto the stack
+     *
+     * @param int value. value to push
+     * @exception none
+     * @return bool : true if push is successful
+     *  false if stack is full
+     ****************************/
     if (top < STACKSIZE - 1) {
         stack[++top] = i;
         return true;
