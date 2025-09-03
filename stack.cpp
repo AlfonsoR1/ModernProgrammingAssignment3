@@ -40,7 +40,6 @@ bool Stack::push(int i) {
     } else {
         return false;
     }
-     << "Stack overflow, cannot push " << i << ;
 }
 
 int Stack::pop() {
