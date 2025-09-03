@@ -8,12 +8,25 @@
 #include "stack.h"
 
 Stack::Stack() {
+    /* **************************
+     * Constructor accepts a length
+     * and sets the length of the
+     * square to that length.
+     *
+     * @param float length
+     * @exception none
+     * @return void
+     * ****************************/
     this->top = -1;
-    << "Top set." << ;
 }
 
 Stack::~Stack() {
-     << "Stack destructor called." << ;
+    /* **************************
+     * Destructor (empty)
+     * @param none
+     * @exception none
+     * @return void
+     ****************************/
 }
 
 bool Stack::isEmpty() {
