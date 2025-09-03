@@ -6,6 +6,8 @@
 ************************************************* */
 
 
+#ifndef MAIN_H
+#define MAIN_H
 
 #define MULTIPLIER 1.5 // used to test overflow and underflow
 #define NARROW .30 // percent of the stack for a narrow band
@@ -18,3 +20,6 @@
 #include <time.h>   // time
 #include <cmath>    // round
 
+
+
+#endif //MAIN_H
