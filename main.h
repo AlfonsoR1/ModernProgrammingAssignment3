@@ -19,7 +19,7 @@
 #include <stdio.h>  // rand
 #include <time.h>   // time
 #include <cmath>    // round
-
+#include "stack.h"  // stack class
 
 
 #endif //MAIN_H
