@@ -10,6 +10,7 @@
 #define FUNCTIONS_H
 
 #include "stack.h"
+#include "print_functions.h"
 
 void underFlowTests(Stack& stack);
 
