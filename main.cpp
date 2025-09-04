@@ -7,12 +7,6 @@
 
 #include "main.h"
 
-void printopening() {
-    std::cout << "Beginning tests..." << std::endl;
-}
-
-void printclosing() {std::cout << "Testing complete." << std::endl;}
-
 int main() {
 
     //Test program for testing the stack.
