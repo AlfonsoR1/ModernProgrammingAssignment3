@@ -9,12 +9,6 @@
 #ifndef MAIN_H
 #define MAIN_H
 
-#define MULTIPLIER 1.5 // used to test overflow and underflow
-#define NARROW .30 // percent of the stack for a narrow band
-#define RANDOM_MULTIPLIER 10
-#define CHOICES 6 // used to pick random operations
-#define MAX_INT 100000 // random ints to push, 1 - 100000
-
 //Standard
 #include <iostream> // cout, endl
 #include <stdio.h>  // rand
@@ -24,6 +18,7 @@
 //Local
 #include "stack.h"  // stack class
 #include "print_functions.h"
+#include "functions.h"
 
 
 
