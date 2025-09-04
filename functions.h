@@ -15,6 +15,7 @@
 #define CHOICES 6 // used to pick random operations
 #define MAX_INT 100000 // random ints to push, 1 - 100000
 
+#include <cmath>    // round
 
 #include "stack.h"
 #include "print_functions.h"
