@@ -14,7 +14,7 @@ void underFlowTests(Stack& stack) {
     ******* UNDERFLOW TESTS *************************
     ************************************************/
 
-    std::cout << "  underflow tests ==> ";
+    printheader("underflow tests");
 
     for (int i = 0; i < STACKSIZE*MULTIPLIER; i++) {
 
@@ -59,8 +59,8 @@ void underFlowTests(Stack& stack) {
        peeked == 0 &&
        pushed == round(STACKSIZE*MULTIPLIER) &&
        is_empty == round(STACKSIZE*MULTIPLIER)) {
-        std::cout << "pass" << std::endl;
+        printpass();
        } else {
-           std::cout << "failed" << std::endl;
+           printfailed();
        }
 }
