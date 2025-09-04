@@ -30,7 +30,7 @@ int main() {
     int pushed = 0;
 
     printopening();
-    printclosing();
+
 
     /************************************************
     ******* UNDERFLOW TESTS *************************
