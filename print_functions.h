@@ -19,6 +19,8 @@ void printpass();
 
 void printfailed();
 
+void printheader(const std::string& testName);
+
 
 
 #endif //PRINT_FUNCTIONS_H

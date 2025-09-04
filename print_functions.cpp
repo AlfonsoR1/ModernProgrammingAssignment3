@@ -59,3 +59,14 @@ void printfailed() {
 
     std::cout << "failed" << std::endl;
 }
+
+void printheader(const std::string& testName) {
+    /* *************************************************
+    * Prints a header for the test section.
+    *
+    * @param testName. the name of the test section to display
+    * @return none
+    * @exception none
+    * ************************************************* */
+    std::cout << "  " << testName<< " ==> ";
+}
