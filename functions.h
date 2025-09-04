@@ -28,7 +28,7 @@ struct  testCounters {
 
 void resetCounter(testCounters& counters);
 
-void underFlowTests(Stack& stack);
+void underFlowTests(Stack& stack,testCounters& counters, int& value);
 
 
 #endif //FUNCTIONS_H

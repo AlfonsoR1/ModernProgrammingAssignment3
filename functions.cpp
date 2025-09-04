@@ -16,7 +16,7 @@ void resetCounter(testCounters& counters) {
     counters.pushed = 0;
 }
 
-void underFlowTests(Stack& stack) {
+void underFlowTests(Stack& stack,testCounters& counters, int& value) {
     /************************************************
     ******* UNDERFLOW TESTS *************************
     ************************************************/
@@ -25,47 +25,47 @@ void underFlowTests(Stack& stack) {
 
     for (int i = 0; i < STACKSIZE*MULTIPLIER; i++) {
 
-        if (stack.isEmpty()) is_empty++;
-        else is_empty--;
+        if (stack.isEmpty()) counters.is_empty++;
+        else counters.is_empty--;
 
-        if(stack.peek(&value)) peeked++;
-        else peeked--;
+        if(stack.peek(&value)) counters.peeked++;
+        else counters.peeked--;
 
         try{
             value = stack.pop();
-            popped++;
+            counters.popped++;
         } catch(...){
             // should always decrement
-            popped--;
+            counters.popped--;
         }
 
         if (stack.push(i)){
             // should always increment
-            pushed++;
+            counters.pushed++;
             if(stack.peek(&value)){
                 // should always increment
-                peeked++;
+                counters.peeked++;
             } else {
-                peeked--;
+                counters.peeked--;
             }
             try{ // returns to empty
                 // should always increment
                 value = stack.pop();
-                popped++;
+                counters.popped++;
             } catch(...){
-                popped--;
+                counters.popped--;
             }
         } else{
-            pushed--;
+            counters.pushed--;
         }
     }
 
     // notice these numbers are logical
     // in underflow, we should expect these numbers
-    if(popped == 0 &&
-       peeked == 0 &&
-       pushed == round(STACKSIZE*MULTIPLIER) &&
-       is_empty == round(STACKSIZE*MULTIPLIER)) {
+    if(counters.popped == 0 &&
+       counters.peeked == 0 &&
+       counters.pushed == round(STACKSIZE*MULTIPLIER) &&
+       counters.is_empty == round(STACKSIZE*MULTIPLIER)) {
         printpass();
        } else {
            printfailed();
