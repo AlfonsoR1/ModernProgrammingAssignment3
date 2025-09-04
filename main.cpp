@@ -38,7 +38,7 @@ int main() {
 
     std::cout << "  underflow tests ==> ";
 
-    for (int i = 0; i < 1000; i++) {
+    for (int i = 0; i < STACKSIZE*MULTIPLIER; i++) {
 
         if (stack.isEmpty()) is_empty++;
         else is_empty--;
