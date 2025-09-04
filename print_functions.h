@@ -10,11 +10,9 @@
 #define PRINT_FUNCTIONS_H
 
 
-void printopening() {
-    std::cout << "Beginning tests..." << std::endl;
-}
+void printopening();
 
-void printclosing() {std::cout << "Testing complete." << std::endl;}
+void printclosing();
 
 
 #endif //PRINT_FUNCTIONS_H
