@@ -20,17 +20,17 @@
 #include "stack.h"
 #include "print_functions.h"
 
-struct  testCounters {
+struct  TestCounters {
     int is_empty;
     int peeked;
     int popped;
     int pushed;
 };
 
-void resetCounter(testCounters& counters);
+void resetCounter(TestCounters& myCounters);
 
-void underFlowTests(Stack& stack,testCounters& counters, int& value);
+void underFlowTests(Stack& stack,TestCounters& myCounters, int& value);
 
-void overFlowTests(Stack& stack,testCounters& counters, int& value);
+void overFlowTests(Stack& stack,TestCounters& myCounters, int& value);
 
 #endif //FUNCTIONS_H

@@ -9,14 +9,14 @@
 #include "functions.h"
 
 
-void resetCounter(testCounters& counters) {
-    counters.is_empty = 0;
-    counters.peeked = 0;
-    counters.popped = 0;
-    counters.pushed = 0;
+void resetCounter(TestCounters& myCounters) {
+    myCounters.is_empty = 0;
+    myCounters.peeked = 0;
+    myCounters.popped = 0;
+    myCounters.pushed = 0;
 }
 
-void underFlowTests(Stack& stack,testCounters& counters, int& value) {
+void underFlowTests(Stack& stack,TestCounters& myCounters, int& value) {
     /************************************************
     ******* UNDERFLOW TESTS *************************
     ************************************************/
@@ -25,54 +25,54 @@ void underFlowTests(Stack& stack,testCounters& counters, int& value) {
 
     for (int i = 0; i < STACKSIZE*MULTIPLIER; i++) {
 
-        if (stack.isEmpty()) counters.is_empty++;
-        else counters.is_empty--;
+        if (stack.isEmpty()) myCounters.is_empty++;
+        else myCounters.is_empty--;
 
-        if(stack.peek(&value)) counters.peeked++;
-        else counters.peeked--;
+        if(stack.peek(&value)) myCounters.peeked++;
+        else myCounters.peeked--;
 
         try{
             value = stack.pop();
-            counters.popped++;
+            myCounters.popped++;
         } catch(...){
             // should always decrement
-            counters.popped--;
+            myCounters.popped--;
         }
 
         if (stack.push(i)){
             // should always increment
-            counters.pushed++;
+            myCounters.pushed++;
             if(stack.peek(&value)){
                 // should always increment
-                counters.peeked++;
+                myCounters.peeked++;
             } else {
-                counters.peeked--;
+                myCounters.peeked--;
             }
             try{ // returns to empty
                 // should always increment
                 value = stack.pop();
-                counters.popped++;
+                myCounters.popped++;
             } catch(...){
-                counters.popped--;
+                myCounters.popped--;
             }
         } else{
-            counters.pushed--;
+            myCounters.pushed--;
         }
     }
 
     // notice these numbers are logical
     // in underflow, we should expect these numbers
-    if(counters.popped == 0 &&
-       counters.peeked == 0 &&
-       counters.pushed == round(STACKSIZE*MULTIPLIER) &&
-       counters.is_empty == round(STACKSIZE*MULTIPLIER)) {
+    if(myCounters.popped == 0 &&
+       myCounters.peeked == 0 &&
+       myCounters.pushed == round(STACKSIZE*MULTIPLIER) &&
+       myCounters.is_empty == round(STACKSIZE*MULTIPLIER)) {
         printpass();
        } else {
            printfailed();
        }
 }
 
-void overFlowTests(Stack& stack,testCounters& counters, int& value) {
+void overFlowTests(Stack& stack,TestCounters& myCounters, int& value) {
     /************************************************
     ******* OVERFLOW TESTS **************************
     ************************************************/
