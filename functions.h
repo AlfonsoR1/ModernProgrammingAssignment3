@@ -19,6 +19,15 @@
 #include "stack.h"
 #include "print_functions.h"
 
+struct  testCounters {
+    int is_empty;
+    int peeked;
+    int popped;
+    int pushed;
+};
+
+void resetCounter(testCounters& counters);
+
 void underFlowTests(Stack& stack);
 
 

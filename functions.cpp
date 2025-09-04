@@ -9,6 +9,13 @@
 #include "functions.h"
 
 
+void resetCounter(testCounters& counters) {
+    counters.is_empty = 0;
+    counters.peeked = 0;
+    counters.popped = 0;
+    counters.pushed = 0;
+}
+
 void underFlowTests(Stack& stack) {
     /************************************************
     ******* UNDERFLOW TESTS *************************
