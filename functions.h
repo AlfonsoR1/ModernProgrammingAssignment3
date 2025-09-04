@@ -9,6 +9,8 @@
 #ifndef FUNCTIONS_H
 #define FUNCTIONS_H
 
+#include "stack.h"
+
 void underFlowTests(Stack& stack);
 
 
