@@ -77,7 +77,7 @@ void overFlowTests(Stack& stack,testCounters& counters, int& value) {
     ******* OVERFLOW TESTS **************************
     ************************************************/
 
-    std::cout << "  overflow tests ==> ";
+    printheader("overflow tests");
 
     // reset counters for tests
     is_empty = 0;
@@ -141,8 +141,8 @@ void overFlowTests(Stack& stack,testCounters& counters, int& value) {
     peeked == round(STACKSIZE*MULTIPLIER) &&
     pushed == 0 &&
     -is_empty == round(STACKSIZE*MULTIPLIER)) {
-    std::cout << "pass" << std::endl;
+    printpass();
     } else {
-    std::cout << "failed" << std::endl;
+    printfailed();
     }
 }
