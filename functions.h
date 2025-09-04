@@ -9,4 +9,7 @@
 #ifndef FUNCTIONS_H
 #define FUNCTIONS_H
 
+void underFlowTests(Stack& stack);
+
+
 #endif //FUNCTIONS_H
