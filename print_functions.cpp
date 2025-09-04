@@ -6,6 +6,8 @@
 *           definition file, print_functions.cpp
 ************************************************* */
 
+#include "print_functions.h"
+
 void printopening() {
     /* *************************************************
     * Prints the opening message to indicate the start
