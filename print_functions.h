@@ -9,6 +9,7 @@
 #ifndef PRINT_FUNCTIONS_H
 #define PRINT_FUNCTIONS_H
 
+#include <iostream>
 
 void printopening();
 
