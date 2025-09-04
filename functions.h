@@ -31,5 +31,6 @@ void resetCounter(testCounters& counters);
 
 void underFlowTests(Stack& stack,testCounters& counters, int& value);
 
+void overFlowTests(Stack& stack,testCounters& counters, int& value);
 
 #endif //FUNCTIONS_H
