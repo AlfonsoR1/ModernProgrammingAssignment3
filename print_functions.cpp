@@ -33,3 +33,29 @@ void printclosing() {
 
     std::cout << "Testing complete." << std::endl;
 }
+
+void printpass() {
+    /* *************************************************
+    * Prints pass message to indicate the passing
+    * of the testing process.
+    *
+    * @param none
+    * @return none
+    * @exception none
+    * ************************************************* */
+
+    std::cout << "pass" << std::endl;
+}
+
+void printfailed() {
+    /* *************************************************
+    * Prints failed message to indicate the failure
+    * of the testing process.
+    *
+    * @param none
+    * @return none
+    * @exception none
+    * ************************************************* */
+
+    std::cout << "failed" << std::endl;
+}

@@ -15,5 +15,10 @@ void printopening();
 
 void printclosing();
 
+void printpass();
+
+void printfailed();
+
+
 
 #endif //PRINT_FUNCTIONS_H
