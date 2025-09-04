@@ -9,6 +9,7 @@
 
 int main() {
 
+
     //Test program for testing the stack.
 
     // seeds the rand() function
@@ -29,6 +30,7 @@ int main() {
     int pushed = 0;
 
     printopening();
+    printclosing();
 
     /************************************************
     ******* UNDERFLOW TESTS *************************
