@@ -87,49 +87,45 @@ void overFlowTests(Stack& stack,TestCounters& myCounters, int& value) {
     stack.push(value);
     }
 
-    int i = 0;
-    int stop = STACKSIZE*MULTIPLIER;
-    while(i < stop) {
+    for (int i = 0; i <= STACKSIZE*MULTIPLIER; i++) {
 
-    if (stack.isEmpty()) {
-    is_empty++;
-    } else {
-    // should always decrement
-    is_empty--;
-    }
+        if (stack.isEmpty()) {
+        myCounters.is_empty++;
+        } else {
+        // should always decrement
+        myCounters.is_empty--;
+        }
 
-    if(stack.peek(&value)){
-    // should always increment
-    peeked++;
-    } else {
-    peeked--;
-    }
+        if(stack.peek(&value)){
+        // should always increment
+        myCounters.peeked++;
+        } else {
+        myCounters.peeked--;
+        }
 
-    try{
-    // should always increment
-    // stack is now not full
-    value = stack.pop();
-    popped++;
-    } catch(...){
-    popped--;
-    }
+        try{
+        // should always increment
+        // stack is now not full
+        value = stack.pop();
+        myCounters.popped++;
+        } catch(...){
+        myCounters.popped--;
+        }
 
-    if (stack.push(i)){
-    // should always increment
-    // stack is now full again
-    pushed++;
-    } else{
-    pushed--;
-    }
+        if (stack.push(i)){
+        // should always increment
+        // stack is now full again
+        myCounters.pushed++;
+        } else{
+        myCounters.pushed--;
+        }
 
-    if (stack.push(i)){
-    pushed++;
-    } else{
-    // should always decrement
-    pushed--;
-    }
-    i++;
-    if (i>stop) break;
+        if (stack.push(i)){
+        myCounters.pushed++;
+        } else{
+        // should always decrement
+        myCounters.pushed--;
+        }
     }
 
     // notice these numbers are logical
