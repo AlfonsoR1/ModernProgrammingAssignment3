@@ -32,68 +32,6 @@ int main() {
     simpleUnderFlowTests(stack,myCounters,value);
 
     /************************************************
-    ******** MID-STACK TESTS ************************
-    ************************************************
-    // reset counters for tests
-    is_empty = 0;
-    peeked = 0;
-    popped = 0;
-    pushed = 0;
-
-    // need a stack of reasonable size
-    // to perform tests
-    std::cout << "  mid-stack tests ==> ";
-    if(STACKSIZE >= 4){
-        
-        // fill stack half-way
-        for (int i = 0; i< int(STACKSIZE / 2); i++) {
-            // using positive and negative "big" numbers
-            value = rand()%2 ? rand() % MAX_INT/2 + 1 : -(rand() % MAX_INT/2 + 1);
-            stack.push(value);
-        }
-    
-        for (int i = 0; i < STACKSIZE*MULTIPLIER; i++) {
-            if(stack.isEmpty()){
-                is_empty++;
-            } else {
-                is_empty--;
-            }
-            if(stack.peek(&value)){
-                peeked++;
-            } else {
-                peeked--;
-            }
-            try {
-                value = stack.pop();
-                popped++;
-            } catch (...) {
-                popped--;
-            }
-            // using positive and negative "big" numbers
-            value = rand()%2 ? rand() % MAX_INT/2 + 1 : -(rand() % MAX_INT/2 + 1);
-            if(stack.push(value)){
-                pushed++;
-            } else {
-                pushed--;
-            }
-        }
-
-        // notice these numbers are logical
-        // in mid-stack, we should expect these numbers
-        if(popped == round(STACKSIZE*MULTIPLIER) &&
-           peeked == round(STACKSIZE*MULTIPLIER) &&
-           pushed == round(STACKSIZE*MULTIPLIER) && 
-           -is_empty == round(STACKSIZE*MULTIPLIER)) {
-           std::cout << "pass" << std::endl;
-        } else {
-            std::cout << "failed" << std::endl;
-        }
-
-    } else{
-        std::cout << "skipped, stack too small" << std::endl;
-    }
-
-    /************************************************
     ******** RANDOM TESTS ***************************
     ** essentially this is only a crash test ********
     *************************************************/
