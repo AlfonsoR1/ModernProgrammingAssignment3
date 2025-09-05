@@ -27,12 +27,14 @@ int main() {
     TestCounters myCounters{};
 
     printopening();
+
     underFlowTests(stack,myCounters,value);
     overFlowTests(stack,myCounters,value);
     simpleUnderFlowTests(stack,myCounters,value);
     midStackTests(stack,myCounters,value);
+    randomTests(stack,myCounters,value);
 
-   printclosing();
+    printclosing();
    return 0;
 }
 
