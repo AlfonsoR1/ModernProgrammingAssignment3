@@ -130,10 +130,10 @@ void overFlowTests(Stack& stack,TestCounters& myCounters, int& value) {
 
     // notice these numbers are logical
     // in overflow, we should expect these numbers
-    if(popped == round(STACKSIZE*MULTIPLIER) &&
-    peeked == round(STACKSIZE*MULTIPLIER) &&
-    pushed == 0 &&
-    -is_empty == round(STACKSIZE*MULTIPLIER)) {
+    if(myCounters.popped == round(STACKSIZE*MULTIPLIER) &&
+    myCounters.peeked == round(STACKSIZE*MULTIPLIER) &&
+    myCounters.pushed == 0 &&
+    -myCounters.is_empty == round(STACKSIZE*MULTIPLIER)) {
     printpass();
     } else {
     printfailed();
