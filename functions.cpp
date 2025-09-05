@@ -202,36 +202,36 @@ void midStackTests(Stack& stack,TestCounters& myCounters, int& value) {
 
         for (int i = 0; i < STACKSIZE*MULTIPLIER; i++) {
             if(stack.isEmpty()){
-                is_empty++;
+                myCounters.is_empty++;
             } else {
-                is_empty--;
+                myCounters.is_empty--;
             }
             if(stack.peek(&value)){
-                peeked++;
+                myCounters.peeked++;
             } else {
-                peeked--;
+                myCounters.peeked--;
             }
             try {
                 value = stack.pop();
-                popped++;
+                myCounters.popped++;
             } catch (...) {
-                popped--;
+                myCounters.popped--;
             }
             // using positive and negative "big" numbers
             value = rand()%2 ? rand() % MAX_INT/2 + 1 : -(rand() % MAX_INT/2 + 1);
             if(stack.push(value)){
-                pushed++;
+                myCounters.pushed++;
             } else {
-                pushed--;
+                myCounters.pushed--;
             }
         }
 
         // notice these numbers are logical
         // in mid-stack, we should expect these numbers
-        if(popped == round(STACKSIZE*MULTIPLIER) &&
-           peeked == round(STACKSIZE*MULTIPLIER) &&
-           pushed == round(STACKSIZE*MULTIPLIER) &&
-           -is_empty == round(STACKSIZE*MULTIPLIER)) {
+        if(myCounters.popped == round(STACKSIZE*MULTIPLIER) &&
+           myCounters.peeked == round(STACKSIZE*MULTIPLIER) &&
+           myCounters.pushed == round(STACKSIZE*MULTIPLIER) &&
+           -myCounters.is_empty == round(STACKSIZE*MULTIPLIER)) {
             printpass();
            } else {
                printfailed();
