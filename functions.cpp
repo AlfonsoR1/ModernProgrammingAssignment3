@@ -80,10 +80,7 @@ void overFlowTests(Stack& stack,TestCounters& myCounters, int& value) {
     printheader("overflow tests");
 
     // reset counters for tests
-    is_empty = 0;
-    peeked = 0;
-    popped = 0;
-    pushed = 0;
+    resetCounter(myCounters);
     // fill stack
     for (int i = 0; i <= STACKSIZE; i++) { // go one too far past STACKSIZE
     value = rand()%2 ? -(i + 1) : i+1; // 50/50 negative or positive number
