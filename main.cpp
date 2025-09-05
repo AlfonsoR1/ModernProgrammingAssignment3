@@ -24,10 +24,11 @@ int main() {
     int value;
 
     // counters for tests
-    testCounters counters{};
+    TestCounters myCounters{};
 
     printopening();
-    underFlowTests(stack,counters,value);
+    underFlowTests(stack,myCounters,value);
+    overFlowTests(stack,myCounters,value);
 
     /************************************************
     ******** EMPTYING AND MORE UNDERFLOW TESTS ******
