@@ -29,7 +29,7 @@ int main() {
     printopening();
     underFlowTests(stack,myCounters,value);
     overFlowTests(stack,myCounters,value);
-
+    simpleUnderFlowTests(stack,myCounters,value);
 
     /************************************************
     ******** MID-STACK TESTS ************************
