@@ -183,15 +183,14 @@ void midStackTests(Stack& stack,TestCounters& myCounters, int& value) {
     /************************************************
     ******** MID-STACK TESTS ************************
     ************************************************/
+
+    printheader("mid-stack tests");
+
     // reset counters for tests
-    is_empty = 0;
-    peeked = 0;
-    popped = 0;
-    pushed = 0;
+    resetCounter(myCounters);
 
     // need a stack of reasonable size
     // to perform tests
-    std::cout << "  mid-stack tests ==> ";
     if(STACKSIZE >= 4){
 
         // fill stack half-way
