@@ -291,10 +291,6 @@ void randomTests(Stack& stack,TestCounters& myCounters, int& value) {
                 stack.isEmpty();
             }
         }
-        choice = rand() % CHOICES + 1;
-
-    }
     // if we made it here, no crash
     printpass();
-
-}
+    }
