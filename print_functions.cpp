@@ -60,6 +60,19 @@ void printfailed() {
     std::cout << "failed" << std::endl;
 }
 
+void printskipped() {
+    /* *************************************************
+    * Prints failed message to indicate the failure
+    * of the testing process.
+    *
+    * @param none
+    * @return none
+    * @exception none
+    * ************************************************* */
+
+    std::cout << "skipped, stack too small" << std::endl;
+}
+
 void printheader(const std::string& testName) {
     /* *************************************************
     * Prints a header for the test section.

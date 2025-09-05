@@ -19,6 +19,8 @@ void printpass();
 
 void printfailed();
 
+void printskipped();
+
 void printheader(const std::string& testName);
 
 
