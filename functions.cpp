@@ -194,7 +194,7 @@ void midStackTests(Stack& stack,TestCounters& myCounters, int& value) {
     #if(STACKSIZE < 4)
         printskipped();
     return;
-    #endif{
+    #endif
 
     // fill stack half-way
     for (int i = 0; i < int(STACKSIZE / 2); i++) {
