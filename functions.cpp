@@ -139,3 +139,45 @@ void overFlowTests(Stack& stack,TestCounters& myCounters, int& value) {
     printfailed();
     }
 }
+
+void simpleUnderFlowTests(Stack& stack,TestCounters& myCounters, int& value) {
+    /************************************************
+    ******** EMPTYING AND MORE UNDERFLOW TESTS ******
+    ************************************************/
+    // reset counters for tests
+    is_empty = 0;
+    peeked = 0;
+    popped = 0;
+    pushed = 0;
+
+    std::cout << "  simple underflow tests ==> ";
+
+    // emptying stack
+    for (int i = 0; i < STACKSIZE+1; i++) {
+    if(stack.isEmpty()){
+    is_empty++;
+    } else {
+    is_empty--;
+    }
+    if(stack.peek(&value)){
+    peeked++;
+    } else {
+    peeked--;
+    }
+    try {
+    value = stack.pop();
+    popped++;
+    } catch (...) {
+    popped--;
+    }
+    }
+
+    if(popped == STACKSIZE-1 &&
+    peeked == STACKSIZE-1 &&
+    pushed == 0 &&
+    -is_empty == STACKSIZE-1) {
+    std::cout << "pass" << std::endl;
+    } else {
+    std::cout << "failed" << std::endl;
+    }
+}
