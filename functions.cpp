@@ -10,6 +10,15 @@
 
 
 void resetCounter(TestCounters& myCounters) {
+    /* **************************
+     * Resets all counters to zero.
+     *
+     * @param myCounters : myCounters is
+     * reference to TestCounters struct
+     * @exception none
+     * @return none
+     ****************************/
+
     myCounters.is_empty = 0;
     myCounters.peeked = 0;
     myCounters.popped = 0;
@@ -17,9 +26,19 @@ void resetCounter(TestCounters& myCounters) {
 }
 
 void underFlowTests(Stack& stack,TestCounters& myCounters, int& value) {
-    /************************************************
-    ******* UNDERFLOW TESTS *************************
-    ************************************************/
+    /* **************************
+     * Runs underflow test on the stack.
+     *
+     * @param stack : stack is reference
+     * to Stack
+     * @param myCounters : myCounters is
+     * reference to TestCounters struct
+     * @param value : value is reference
+     * to integer used for testing.
+     *
+     * @exception none
+     * @return none
+     ****************************/
 
     printheader("underflow tests");
 
@@ -73,9 +92,19 @@ void underFlowTests(Stack& stack,TestCounters& myCounters, int& value) {
 }
 
 void overFlowTests(Stack& stack,TestCounters& myCounters, int& value) {
-    /************************************************
-    ******* OVERFLOW TESTS **************************
-    ************************************************/
+    /* **************************
+     * Runs overflow test on the stack.
+     *
+     * @param stack : stack is reference
+     * to Stack
+     * @param myCounters : myCounters is
+     * reference to TestCounters struct
+     * @param value : value is reference
+     * to integer used for testing.
+     *
+     * @exception none
+     * @return none
+     ****************************/
 
     printheader("overflow tests");
 
@@ -141,9 +170,19 @@ void overFlowTests(Stack& stack,TestCounters& myCounters, int& value) {
 }
 
 void simpleUnderFlowTests(Stack& stack,TestCounters& myCounters, int& value) {
-    /************************************************
-    ******** EMPTYING AND MORE UNDERFLOW TESTS ******
-    ************************************************/
+    /* **************************
+     * Runs simple underflow test on the stack.
+     *
+     * @param stack : stack is reference
+     * to Stack
+     * @param myCounters : myCounters is
+     * reference to TestCounters struct
+     * @param value : value is reference
+     * to integer used for testing.
+     *
+     * @exception none
+     * @return none
+     ****************************/
 
     printheader("simple underflow tests");
     // reset counters for tests
@@ -180,9 +219,19 @@ void simpleUnderFlowTests(Stack& stack,TestCounters& myCounters, int& value) {
 }
 
 void midStackTests(Stack& stack,TestCounters& myCounters, int& value) {
-    /************************************************
-    ******** MID-STACK TESTS ************************
-    ************************************************/
+    /* **************************
+     * Runs mid-stack test on the stack.
+     *
+     * @param stack : stack is reference
+     * to Stack
+     * @param myCounters : myCounters is
+     * reference to TestCounters struct
+     * @param value : value is reference
+     * to integer used for testing.
+     *
+     * @exception none
+     * @return none
+     ****************************/
 
     printheader("mid-stack tests");
 
@@ -242,10 +291,20 @@ void midStackTests(Stack& stack,TestCounters& myCounters, int& value) {
     }
 
 void randomTests(Stack& stack,TestCounters& myCounters, int& value) {
-    /************************************************
-    ******** RANDOM TESTS ***************************
-    ** essentially this is only a crash test ********
-    *************************************************/
+    /* **************************
+     * Runs random crash test on the stack.
+     * Checks push,pop,peek when stack is nearly empty.
+     *
+     * @param stack : stack is reference
+     * to Stack
+     * @param myCounters : myCounters is
+     * reference to TestCounters struct
+     * @param value : value is reference
+     * to integer used for testing.
+     *
+     * @exception none
+     * @return none
+     ****************************/
 
     printheader("random testing");
     // clearing stack to start
