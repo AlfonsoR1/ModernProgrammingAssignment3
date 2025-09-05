@@ -144,13 +144,10 @@ void simpleUnderFlowTests(Stack& stack,TestCounters& myCounters, int& value) {
     /************************************************
     ******** EMPTYING AND MORE UNDERFLOW TESTS ******
     ************************************************/
-    // reset counters for tests
-    is_empty = 0;
-    peeked = 0;
-    popped = 0;
-    pushed = 0;
 
-    std::cout << "  simple underflow tests ==> ";
+    printheader("simple underflow tests");
+    // reset counters for tests
+    resetCounter(myCounters);
 
     // emptying stack
     for (int i = 0; i < STACKSIZE+1; i++) {
@@ -176,8 +173,8 @@ void simpleUnderFlowTests(Stack& stack,TestCounters& myCounters, int& value) {
     peeked == STACKSIZE-1 &&
     pushed == 0 &&
     -is_empty == STACKSIZE-1) {
-    std::cout << "pass" << std::endl;
+    printpass();
     } else {
-    std::cout << "failed" << std::endl;
+    printfailed();
     }
 }
