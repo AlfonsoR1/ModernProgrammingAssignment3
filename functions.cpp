@@ -282,14 +282,14 @@ void randomTests(Stack& stack,TestCounters& myCounters, int& value) {
                     // expect it to happen sometimes
                 }
             }
-            case 5:
+            if (choice == 5) {
                 // peek
                 stack.peek(&value);
-                break;
-            case 6:
+            }
+            if (choice == 6) {
                 // isempty
                 stack.isEmpty();
-                break;
+            }
         }
         choice = rand() % CHOICES + 1;
 
