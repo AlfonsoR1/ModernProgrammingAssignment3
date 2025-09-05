@@ -268,15 +268,11 @@ void randomTests(Stack& stack,TestCounters& myCounters, int& value) {
     // to observe the code does not crash.
     int choice = rand() % CHOICES + 1;
     for (int i = 0; i < STACKSIZE*RANDOM_MULTIPLIER; i++) {
-        switch (choice) {
-            case 1:
-            case 2:
-                // push
+            if (choice == 1 || choice == 2) {
                 value = (rand() % MAX_INT) + 1;
                 stack.push(value);
-                break;
-            case 3:
-            case 4:
+            }
+            if (choice == 3 || choice == 4) {
                 // pop
                 try{
                     value = stack.pop();
@@ -285,7 +281,7 @@ void randomTests(Stack& stack,TestCounters& myCounters, int& value) {
                     // care about this case now and we
                     // expect it to happen sometimes
                 }
-                break;
+            }
             case 5:
                 // peek
                 stack.peek(&value);
