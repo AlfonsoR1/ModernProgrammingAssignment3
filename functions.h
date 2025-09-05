@@ -35,4 +35,6 @@ void overFlowTests(Stack& stack,TestCounters& myCounters, int& value);
 
 void simpleUnderFlowTests(Stack& stack,TestCounters& myCounters, int& value);
 
+void midStackTests(Stack& stack,TestCounters& myCounters, int& value);
+
 #endif //FUNCTIONS_H
