@@ -85,7 +85,7 @@ void overFlowTests(Stack& stack,TestCounters& myCounters, int& value) {
     popped = 0;
     pushed = 0;
     // fill stack
-    for (int i = 0; i <= 10; i++) { // go one too far past STACKSIZE
+    for (int i = 0; i <= STACKSIZE; i++) { // go one too far past STACKSIZE
     value = rand()%2 ? -(i + 1) : i+1; // 50/50 negative or positive number
     stack.push(value);
     }
