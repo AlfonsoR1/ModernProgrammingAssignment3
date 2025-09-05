@@ -191,7 +191,10 @@ void midStackTests(Stack& stack,TestCounters& myCounters, int& value) {
 
     // need a stack of reasonable size
     // to perform tests
-    if(STACKSIZE >= 4){
+    #if(STACKSIZE < 4)
+        printskipped();
+    return;
+    #endif{
 
         // fill stack half-way
         for (int i = 0; i< int(STACKSIZE / 2); i++) {
@@ -237,7 +240,4 @@ void midStackTests(Stack& stack,TestCounters& myCounters, int& value) {
                printfailed();
            }
 
-    } else{
-        std::cout << "skipped, stack too small" << std::endl;
     }
-}
