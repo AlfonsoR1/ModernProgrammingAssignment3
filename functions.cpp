@@ -152,27 +152,27 @@ void simpleUnderFlowTests(Stack& stack,TestCounters& myCounters, int& value) {
     // emptying stack
     for (int i = 0; i < STACKSIZE+1; i++) {
     if(stack.isEmpty()){
-    is_empty++;
+    myCounters.is_empty++;
     } else {
-    is_empty--;
+    myCounters.is_empty--;
     }
     if(stack.peek(&value)){
-    peeked++;
+    myCounters.peeked++;
     } else {
-    peeked--;
+    myCounters.peeked--;
     }
     try {
     value = stack.pop();
-    popped++;
+    myCounters.popped++;
     } catch (...) {
-    popped--;
+    myCounters.popped--;
     }
     }
 
-    if(popped == STACKSIZE-1 &&
-    peeked == STACKSIZE-1 &&
-    pushed == 0 &&
-    -is_empty == STACKSIZE-1) {
+    if(myCounters.popped == STACKSIZE-1 &&
+    myCounters.peeked == STACKSIZE-1 &&
+    myCounters.pushed == 0 &&
+    -myCounters.is_empty == STACKSIZE-1) {
     printpass();
     } else {
     printfailed();
