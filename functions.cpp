@@ -87,7 +87,7 @@ void overFlowTests(Stack& stack,TestCounters& myCounters, int& value) {
     stack.push(value);
     }
 
-    for (int i = 0; i <= STACKSIZE*MULTIPLIER; i++) {
+    for (int i = 0; i < STACKSIZE*MULTIPLIER; i++) {
 
         if (stack.isEmpty()) {
         myCounters.is_empty++;
