@@ -247,7 +247,7 @@ void randomTests(Stack& stack,TestCounters& myCounters, int& value) {
     ** essentially this is only a crash test ********
     *************************************************/
 
-    std::cout << "  random testing ==> ";
+    printheader("random testing");
     // clearing stack to start
     while(1){
         stack.pop();
@@ -300,6 +300,6 @@ void randomTests(Stack& stack,TestCounters& myCounters, int& value) {
 
     }
     // if we made it here, no crash
-    std::cout << "pass" << std::endl;
+    printpass();
 
 }
