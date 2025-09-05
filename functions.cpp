@@ -232,9 +232,9 @@ void midStackTests(Stack& stack,TestCounters& myCounters, int& value) {
            peeked == round(STACKSIZE*MULTIPLIER) &&
            pushed == round(STACKSIZE*MULTIPLIER) &&
            -is_empty == round(STACKSIZE*MULTIPLIER)) {
-            std::cout << "pass" << std::endl;
+            printpass();
            } else {
-               std::cout << "failed" << std::endl;
+               printfailed();
            }
 
     } else{
