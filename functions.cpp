@@ -249,9 +249,8 @@ void randomTests(Stack& stack,TestCounters& myCounters, int& value) {
 
     printheader("random testing");
     // clearing stack to start
-    while(1){
+    while(!stack.isEmpty()){
         stack.pop();
-        if(stack.isEmpty()) break;
     }
 
     // filling the stack half way with random numbers to begin random tests
