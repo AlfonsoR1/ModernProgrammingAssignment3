@@ -56,8 +56,9 @@ bool Stack::push(int value) {
         stack[++top] = value;
         okay = true;
     } else {
-        return okay;
+        okay = false;
     }
+    return okay;
 }
 
 int Stack::pop() {
