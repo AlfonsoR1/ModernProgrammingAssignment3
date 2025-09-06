@@ -26,7 +26,7 @@ int main() {
     // counters for tests
     TestCounters myCounters{};
 
-    printopening();
+    std::cout << "Beginning tests..." << std::endl;
 
     underFlowTests(stack,myCounters,value);
     overFlowTests(stack,myCounters,value);
@@ -34,7 +34,7 @@ int main() {
     midStackTests(stack,myCounters,value);
     randomTests(stack,myCounters,value);
 
-    printclosing();
+    std::cout << "Testing complete." << std::endl;
    return 0;
 }
 
