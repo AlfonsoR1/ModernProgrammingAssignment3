@@ -51,11 +51,12 @@ bool Stack::push(int value) {
      * @return bool : true if push is successful
      *  false if stack is full
      ****************************/
+    bool okay = false;
     if (top < STACKSIZE - 1) {
         stack[++top] = value;
-        return true;
+        okay = true;
     } else {
-        return false;
+        return okay;
     }
 }
 
@@ -69,11 +70,13 @@ int Stack::pop() {
      * @return int value popped from
      *  the stack
      ****************************/
+    int out = 0;
     if (top >= 0) {
-        return stack[top--];
+        out = stack[top--];
     } else {
         throw -1;
     }
+    return out;
 }
 
 bool Stack::peek(int *ret) {
