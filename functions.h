@@ -20,6 +20,8 @@
 #include "stack.h"
 #include "print_functions.h"
 
+enum TestResults{PASS, FAIL, SKIPPED};
+
 struct  TestCounters {
     int is_empty;
     int peeked;
