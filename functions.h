@@ -20,7 +20,7 @@
 #include "stack.h"
 
 
-enum TestResults{PASS, FAIL, SKIPPED};
+enum TestResult{PASS, FAIL, SKIPPED};
 
 struct  TestCounters {
     int is_empty;
@@ -31,14 +31,14 @@ struct  TestCounters {
 
 void resetCounter(TestCounters& );
 
-void underFlowTests(Stack& ,TestCounters& , int& );
+TestResult underFlowTests(Stack& ,TestCounters& , int& );
 
-void overFlowTests(Stack& ,TestCounters& , int& );
+TestResult overFlowTests(Stack& ,TestCounters& , int& );
 
-void simpleUnderFlowTests(Stack& ,TestCounters& , int& );
+TestResult simpleUnderFlowTests(Stack& ,TestCounters& , int& );
 
-void midStackTests(Stack& ,TestCounters& , int& );
+TestResult midStackTests(Stack& ,TestCounters& , int& );
 
-void randomTests(Stack& ,TestCounters& , int& );
+TestResult randomTests(Stack& ,TestCounters& , int& );
 
 #endif //FUNCTIONS_H

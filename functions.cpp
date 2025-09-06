@@ -25,7 +25,7 @@ void resetCounter(TestCounters& myCounters) {
     myCounters.pushed = 0;
 }
 
-void underFlowTests(Stack& stack,TestCounters& myCounters, int& value) {
+TestResult underFlowTests(Stack& stack,TestCounters& myCounters, int& value) {
     /* **************************
      * Runs underflow test on the stack.
      *
@@ -37,10 +37,8 @@ void underFlowTests(Stack& stack,TestCounters& myCounters, int& value) {
      * to integer used for testing.
      *
      * @exception none
-     * @return none
+     * @return TestResult of the test pass or fail.
      ****************************/
-
-    printheader("underflow tests");
 
     for (int i = 0; i < STACKSIZE*MULTIPLIER; i++) {
 
@@ -81,14 +79,14 @@ void underFlowTests(Stack& stack,TestCounters& myCounters, int& value) {
 
     // notice these numbers are logical
     // in underflow, we should expect these numbers
+    TestResult result = FAIL;
     if(myCounters.popped == 0 &&
        myCounters.peeked == 0 &&
        myCounters.pushed == round(STACKSIZE*MULTIPLIER) &&
        myCounters.is_empty == round(STACKSIZE*MULTIPLIER)) {
-        printpass();
-       } else {
-           printfailed();
+        result = PASS;
        }
+    return result;
 }
 
 void overFlowTests(Stack& stack,TestCounters& myCounters, int& value) {
