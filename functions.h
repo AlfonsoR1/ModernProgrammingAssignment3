@@ -18,7 +18,7 @@
 #include <cmath>    // round
 
 #include "stack.h"
-#include "print_functions.h"
+
 
 enum TestResults{PASS, FAIL, SKIPPED};
 
