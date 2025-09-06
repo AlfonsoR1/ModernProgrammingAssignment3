@@ -29,7 +29,7 @@ public:
     Setters/Mutators
     ***********************/
     int pop();
-    bool push(int value);
+    bool push(int );
 
     /**********************
     Printing Methods
@@ -47,7 +47,7 @@ private:
     /**********************
     Attributes
     ***********************/
-    int stack[STACKSIZE];
+    int stack;
     int top;
 };
 

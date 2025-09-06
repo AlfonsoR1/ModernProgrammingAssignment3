@@ -27,16 +27,16 @@ struct  TestCounters {
     int pushed;
 };
 
-void resetCounter(TestCounters& myCounters);
+void resetCounter(TestCounters& );
 
-void underFlowTests(Stack& stack,TestCounters& myCounters, int& value);
+void underFlowTests(Stack& ,TestCounters& , int& );
 
-void overFlowTests(Stack& stack,TestCounters& myCounters, int& value);
+void overFlowTests(Stack& ,TestCounters& , int& );
 
-void simpleUnderFlowTests(Stack& stack,TestCounters& myCounters, int& value);
+void simpleUnderFlowTests(Stack& ,TestCounters& , int& );
 
-void midStackTests(Stack& stack,TestCounters& myCounters, int& value);
+void midStackTests(Stack& ,TestCounters& , int& );
 
-void randomTests(Stack& stack,TestCounters& myCounters, int& value);
+void randomTests(Stack& ,TestCounters& , int& );
 
 #endif //FUNCTIONS_H
