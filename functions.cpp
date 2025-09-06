@@ -180,7 +180,6 @@ void simpleUnderFlowTests(Stack& stack,TestCounters& myCounters, int& value) {
      * @return none
      ****************************/
 
-    printheader("simple underflow tests");
     // reset counters for tests
     resetCounter(myCounters);
 
@@ -228,8 +227,6 @@ void midStackTests(Stack& stack,TestCounters& myCounters, int& value) {
      * @exception none
      * @return none
      ****************************/
-
-    printheader("mid-stack tests");
 
     // reset counters for tests
     resetCounter(myCounters);
@@ -302,7 +299,6 @@ void randomTests(Stack& stack,TestCounters& myCounters, int& value) {
      * @return none
      ****************************/
 
-    printheader("random testing");
     // clearing stack to start
     bool notEmpty = stack.isEmpty();
     while(notEmpty){

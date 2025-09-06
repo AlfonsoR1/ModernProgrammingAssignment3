@@ -29,6 +29,11 @@ int main() {
     std::cout << "Beginning tests..." << std::endl;
 
     //std::cout << "  " << testName<< " ==> ";
+    //printheader("underflow tests");
+    //printheader("overflow tests");
+    //printheader("simple underflow tests");
+    //printheader("mid-stack tests");
+    //printheader("random testing");
 
     underFlowTests(stack,myCounters,value);
     overFlowTests(stack,myCounters,value);
