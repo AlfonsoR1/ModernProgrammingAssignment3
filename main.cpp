@@ -28,6 +28,8 @@ int main() {
 
     std::cout << "Beginning tests..." << std::endl;
 
+    //std::cout << "  " << testName<< " ==> ";
+
     underFlowTests(stack,myCounters,value);
     overFlowTests(stack,myCounters,value);
     simpleUnderFlowTests(stack,myCounters,value);
