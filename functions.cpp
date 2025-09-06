@@ -308,7 +308,8 @@ void randomTests(Stack& stack,TestCounters& myCounters, int& value) {
 
     printheader("random testing");
     // clearing stack to start
-    while(!stack.isEmpty()){
+    bool notEmpty = stack.isEmpty();
+    while(notEmpty){
         stack.pop();
     }
 
