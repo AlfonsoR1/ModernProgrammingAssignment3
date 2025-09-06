@@ -165,7 +165,7 @@ TestResult overFlowTests(Stack& stack,TestCounters& myCounters, int& value) {
     return result;
 }
 
-void simpleUnderFlowTests(Stack& stack,TestCounters& myCounters, int& value) {
+TestResult simpleUnderFlowTests(Stack& stack,TestCounters& myCounters, int& value) {
     /* **************************
      * Runs simple underflow test on the stack.
      *
@@ -203,15 +203,15 @@ void simpleUnderFlowTests(Stack& stack,TestCounters& myCounters, int& value) {
     }
     }
 
+    TestResult result = FAIL;
     if(myCounters.popped == STACKSIZE-1 &&
-    myCounters.peeked == STACKSIZE-1 &&
-    myCounters.pushed == 0 &&
-    -myCounters.is_empty == STACKSIZE-1) {
-    printpass();
-    } else {
-    printfailed();
+        myCounters.peeked == STACKSIZE-1 &&
+        myCounters.pushed == 0 &&
+        myCounters.is_empty == STACKSIZE-1) {
+        result = PASS;
     }
-}
+    return result;
+    }
 
 void midStackTests(Stack& stack,TestCounters& myCounters, int& value) {
     /* **************************
