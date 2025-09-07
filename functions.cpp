@@ -159,7 +159,7 @@ TestResult overFlowTests(Stack& stack,TestCounters& myCounters, int& value) {
     if(myCounters.popped == round(STACKSIZE*MULTIPLIER) &&
         myCounters.peeked == round(STACKSIZE*MULTIPLIER) &&
         myCounters.pushed == 0 &&
-        myCounters.is_empty == round(STACKSIZE*MULTIPLIER)) {
+        -myCounters.is_empty == round(STACKSIZE*MULTIPLIER)) {
         result = PASS;
     }
     return result;
@@ -177,7 +177,7 @@ TestResult simpleUnderFlowTests(Stack& stack,TestCounters& myCounters, int& valu
      * to integer used for testing.
      *
      * @exception none
-     * @return none
+     * @return TestResult of the test pass or fail.
      ****************************/
 
     // reset counters for tests
@@ -207,13 +207,13 @@ TestResult simpleUnderFlowTests(Stack& stack,TestCounters& myCounters, int& valu
     if(myCounters.popped == STACKSIZE-1 &&
         myCounters.peeked == STACKSIZE-1 &&
         myCounters.pushed == 0 &&
-        myCounters.is_empty == STACKSIZE-1) {
+        -myCounters.is_empty == STACKSIZE-1) {
         result = PASS;
     }
     return result;
     }
 
-void midStackTests(Stack& stack,TestCounters& myCounters, int& value) {
+TestResult midStackTests(Stack& stack,TestCounters& myCounters, int& value) {
     /* **************************
      * Runs mid-stack test on the stack.
      *
@@ -225,7 +225,7 @@ void midStackTests(Stack& stack,TestCounters& myCounters, int& value) {
      * to integer used for testing.
      *
      * @exception none
-     * @return none
+     * @return TestResult of the test pass or fail.
      ****************************/
 
     // reset counters for tests
@@ -273,17 +273,17 @@ void midStackTests(Stack& stack,TestCounters& myCounters, int& value) {
 
     // notice these numbers are logical
     // in mid-stack, we should expect these numbers
+    TestResult result = FAIL;
     if (myCounters.popped == round(STACKSIZE * MULTIPLIER) &&
         myCounters.peeked == round(STACKSIZE * MULTIPLIER) &&
         myCounters.pushed == round(STACKSIZE * MULTIPLIER) &&
         -myCounters.is_empty == round(STACKSIZE * MULTIPLIER)) {
-        printpass();
-    } else {
-        printfailed();
+        result = PASS;
     }
+    result = FAIL;
     }
 
-void randomTests(Stack& stack,TestCounters& myCounters, int& value) {
+TestResult randomTests(Stack& stack,TestCounters& myCounters, int& value) {
     /* **************************
      * Runs random crash test on the stack.
      * Checks push,pop,peek when stack is nearly empty.
@@ -296,7 +296,7 @@ void randomTests(Stack& stack,TestCounters& myCounters, int& value) {
      * to integer used for testing.
      *
      * @exception none
-     * @return none
+     * @return TestResult of the test pass or fail.
      ****************************/
 
     // clearing stack to start
@@ -344,5 +344,5 @@ void randomTests(Stack& stack,TestCounters& myCounters, int& value) {
             }
         }
     // if we made it here, no crash
-    printpass();
+    result = PASS;
     }
