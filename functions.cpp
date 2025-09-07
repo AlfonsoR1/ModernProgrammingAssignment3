@@ -302,6 +302,7 @@ TestResult randomTests(Stack& stack,TestCounters& myCounters, int& value) {
     bool notEmpty = stack.isEmpty();
     while(notEmpty){
         stack.pop();
+        notEmpty = stack.isEmpty();
     }
 
     // filling the stack half way with random numbers to begin random tests
