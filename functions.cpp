@@ -225,17 +225,18 @@ TestResult midStackTests(Stack& stack,TestCounters& myCounters, int& value) {
      * to integer used for testing.
      *
      * @exception none
-     * @return TestResult of the test pass or fail.
+     * @return TestResult of the test pass or fail or skip.
      ****************************/
 
     // reset counters for tests
     resetCounter(myCounters);
 
-    TestResult result = SKIPPED;
+    TestResult result = FAIL;
     // need a stack of reasonable size
     // to perform tests
-    if(STACKSIZE >= 4){
-        result = FAIL;
+    if(STACKSIZE < 4) {
+        result = SKIPPED;
+    }else {
 
         // fill stack half-way
         for (int i = 0; i < int(STACKSIZE / 2); i++) {
