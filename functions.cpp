@@ -231,57 +231,56 @@ TestResult midStackTests(Stack& stack,TestCounters& myCounters, int& value) {
     // reset counters for tests
     resetCounter(myCounters);
 
+    TestResult result = SKIPPED;
     // need a stack of reasonable size
     // to perform tests
-    #if(STACKSIZE < 4)
-        printskipped();
-    return;
-    #endif
+    if(STACKSIZE >= 4){
+        result = FAIL;
 
-    // fill stack half-way
-    for (int i = 0; i < int(STACKSIZE / 2); i++) {
-        // using positive and negative "big" numbers
-        value = rand() % 2 ? rand() % MAX_INT / 2 + 1 : -(rand() % MAX_INT / 2 + 1);
-        stack.push(value);
-    }
+        // fill stack half-way
+        for (int i = 0; i < int(STACKSIZE / 2); i++) {
+            // using positive and negative "big" numbers
+            value = rand() % 2 ? rand() % MAX_INT / 2 + 1 : -(rand() % MAX_INT / 2 + 1);
+            stack.push(value);
+        }
 
-    for (int i = 0; i < STACKSIZE * MULTIPLIER; i++) {
-        if (stack.isEmpty()) {
-            myCounters.is_empty++;
-        } else {
-            myCounters.is_empty--;
+        for (int i = 0; i < STACKSIZE * MULTIPLIER; i++) {
+            if (stack.isEmpty()) {
+                myCounters.is_empty++;
+            } else {
+                myCounters.is_empty--;
+            }
+            if (stack.peek(&value)) {
+                myCounters.peeked++;
+            } else {
+                myCounters.peeked--;
+            }
+            try {
+                value = stack.pop();
+                myCounters.popped++;
+            } catch (...) {
+                myCounters.popped--;
+            }
+            // using positive and negative "big" numbers
+            value = rand() % 2 ? rand() % MAX_INT / 2 + 1 : -(rand() % MAX_INT / 2 + 1);
+            if (stack.push(value)) {
+                myCounters.pushed++;
+            } else {
+                myCounters.pushed--;
+            }
         }
-        if (stack.peek(&value)) {
-            myCounters.peeked++;
-        } else {
-            myCounters.peeked--;
-        }
-        try {
-            value = stack.pop();
-            myCounters.popped++;
-        } catch (...) {
-            myCounters.popped--;
-        }
-        // using positive and negative "big" numbers
-        value = rand() % 2 ? rand() % MAX_INT / 2 + 1 : -(rand() % MAX_INT / 2 + 1);
-        if (stack.push(value)) {
-            myCounters.pushed++;
-        } else {
-            myCounters.pushed--;
-        }
-    }
 
-    // notice these numbers are logical
-    // in mid-stack, we should expect these numbers
-    TestResult result = FAIL;
-    if (myCounters.popped == round(STACKSIZE * MULTIPLIER) &&
-        myCounters.peeked == round(STACKSIZE * MULTIPLIER) &&
-        myCounters.pushed == round(STACKSIZE * MULTIPLIER) &&
-        -myCounters.is_empty == round(STACKSIZE * MULTIPLIER)) {
-        result = PASS;
+        // notice these numbers are logical
+        // in mid-stack, we should expect these numbers
+        if (myCounters.popped == round(STACKSIZE * MULTIPLIER) &&
+            myCounters.peeked == round(STACKSIZE * MULTIPLIER) &&
+            myCounters.pushed == round(STACKSIZE * MULTIPLIER) &&
+            -myCounters.is_empty == round(STACKSIZE * MULTIPLIER)) {
+            result = PASS;
+            }
     }
-    result = FAIL;
-    }
+    return result;
+}
 
 TestResult randomTests(Stack& stack,TestCounters& myCounters, int& value) {
     /* **************************
@@ -344,5 +343,6 @@ TestResult randomTests(Stack& stack,TestCounters& myCounters, int& value) {
             }
         }
     // if we made it here, no crash
-    result = PASS;
+    TestResult result = PASS;
+    return result;
     }
