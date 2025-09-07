@@ -8,7 +8,15 @@
 #include "main.h"
 
 int main() {
-
+    /* **************************
+     * Runs a series of test on the stack.
+     *
+     * @param stack none
+     *
+     * @exception none
+     * @return 0 : to show when the test is
+     * successful.
+     ****************************/
 
     //Test program for testing the stack.
 
