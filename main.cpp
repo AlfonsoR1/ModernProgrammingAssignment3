@@ -28,18 +28,47 @@ int main() {
 
     std::cout << "Beginning tests..." << std::endl;
 
-    //std::cout << "  " << testName<< " ==> ";
-    //printheader("underflow tests");
-    //printheader("overflow tests");
-    //printheader("simple underflow tests");
-    //printheader("mid-stack tests");
-    //printheader("random testing");
+    std::cout << "  underflow tests ==> ";
+    TestResult result = underFlowTests(stack,myCounters,value);
+        if (result == PASS) {
+            std::cout << "passed" << std::endl;
+        }else {
+            std::cout << "failed" << std::endl;
+        }
 
-    underFlowTests(stack,myCounters,value);
-    overFlowTests(stack,myCounters,value);
-    simpleUnderFlowTests(stack,myCounters,value);
-    midStackTests(stack,myCounters,value);
-    randomTests(stack,myCounters,value);
+    std::cout << "  overflow tests ==> ";
+    TestResult result2 = overFlowTests(stack,myCounters,value);
+    if (result2 == PASS) {
+        std::cout << "passed" << std::endl;
+    }else {
+        std::cout << "failed" << std::endl;
+    }
+
+    std::cout << "  simple underflow tests ==> ";
+    TestResult result3 = simpleUnderFlowTests(stack,myCounters,value);
+    if (result3 == PASS) {
+        std::cout << "passed" << std::endl;
+    }else {
+        std::cout << "failed" << std::endl;
+    }
+
+    std::cout << "  mid-stack testing ==> ";
+    TestResult result4 = midStackTests(stack,myCounters,value);
+    if (result4 == PASS) {
+        std::cout << "passed" << std::endl;
+    }else if (result4 == FAIL) {
+        std::cout << "failed" << std::endl;
+    }else {
+        std::cout << "skipped, stack too small" << std::endl;
+    }
+
+    std::cout << "  random testing ==> ";
+    TestResult result5 = randomTests(stack,myCounters,value);
+    if (result5 == PASS) {
+        std::cout << "passed" << std::endl;
+    }else {
+        std::cout << "failed" << std::endl;
+    }
 
     std::cout << "Testing complete." << std::endl;
    return 0;
